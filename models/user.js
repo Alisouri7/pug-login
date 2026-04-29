@@ -4,7 +4,7 @@ const schema = mongoose.Schema({
     usename: {
         type: String,
         minLength: 3,
-        maxLenth: 20,
+        maxLength: 20,
         required:true
     },
     password: {
@@ -13,5 +13,5 @@ const schema = mongoose.Schema({
     }
 }, { timestamps: true});
 
-const model = mongoose.model('User', schema);
+const model = mongoose.model('UsersInPug', schema);
 module.exports = model;
