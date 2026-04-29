@@ -1,3 +1,37 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(26, 24, 24, 0.471);
+}
+
 .login-page{
-    background-color: #231f1f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form > input , .login-form > button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
 }
