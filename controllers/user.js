@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 
 exports.getRegisterPage = async (req, res) => {
-
+    res.render('register')
 }
 
 exports.register = async (req, res) => {
