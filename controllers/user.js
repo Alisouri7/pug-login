@@ -12,7 +12,7 @@ exports.register = async (req, res) => {
 
 
 exports.getLoginPage = async (req, res) => {
-
+    res.render('login')
 }
 
 exports.login = async (req, res) => {
