@@ -9,7 +9,7 @@ app.use(express.static('public'));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use('/user', userRouter)
+app.use('/user', userRouter);
 
 
 module.exports = app;
