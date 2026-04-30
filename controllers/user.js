@@ -30,7 +30,7 @@ exports.login = async (req, res) => {
 
     if (!user) {
         res.render('login', {
-            error: { mesage: 'THIS USER IS NOT EXIST IN DATA BASE' }
+            error: { message: 'THIS USER IS NOT EXIST IN DATA BASE' }
         })
     }
 
@@ -39,7 +39,7 @@ exports.login = async (req, res) => {
 
     if (!result) {
         res.render('login', {
-            error: { mesage: 'USERNAME OR PASSWORD IS WRONG' }
+            error: { message: 'USERNAME OR PASSWORD IS WRONG' }
         })
     }
 
