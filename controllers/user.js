@@ -44,7 +44,7 @@ exports.login = async (req, res) => {
     }
 
     res.render('mainpage', {
-        user: { userame: `${user.username}` }
+        user: { username: `${user.username}` }
     })
 
 }
