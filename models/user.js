@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const schema = mongoose.Schema({
-    usename: {
+    username: {
         type: String,
         minLength: 3,
         maxLength: 20,

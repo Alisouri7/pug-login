@@ -3,6 +3,18 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/style.css")
         title Register Page
     body 
-        h1 register page
+        .login-page 
+            .form 
+                form.login-form( action="/user/register", method="post" )
+                    input( type="text", placeholder="Username", name="username", autocomplete="on" ) 
+                    input( type="password", placeholder="Password", name="password" )
+
+                    if error
+                        p #{error.message}
+                        
+                    button.login-btn Create Account
+                p.message | Registered? 
+                    a(href="/user/login") Login
