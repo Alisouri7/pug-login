@@ -10,6 +10,13 @@ exports.getRegisterPage = async (req, res) => {
 exports.register = async (req, res) => {
     const { username, password } = req.body;
 
+    const isUserExist = await userModel.findOne({username}).lean();
+
+    if (!isUserExist) {
+        res.render('reister',{
+            error: {message: 'THIS USER ALREADY EXIST IN DB'}
+        })
+    }
     const hash = await bcrypt.hash(password, 10)
     const user = await userModel.create({
         username,
