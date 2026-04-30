@@ -26,6 +26,12 @@ exports.getLoginPage = async (req, res) => {
 exports.login = async (req, res) => {
     const { username, password } = req.body;
 
+
+    if (username || password) {
+        res.render('login', {
+            error: {message: 'Fill username and password'}
+        })
+    }
     const user = await userModel.findOne({ username }).lean();
 
     if (!user) {
