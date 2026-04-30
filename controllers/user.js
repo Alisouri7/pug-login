@@ -10,11 +10,11 @@ exports.getRegisterPage = async (req, res) => {
 exports.register = async (req, res) => {
     const { username, password } = req.body;
 
-    const isUserExist = await userModel.findOne({username}).lean();
-    
+    const isUserExist = await userModel.findOne({ username }).lean();
+
     if (isUserExist) {
-        res.render('register',{
-            error: {message: 'THIS USER ALREADY EXIST IN DB'}
+        res.render('register', {
+            error: { message: 'THIS USER ALREADY EXIST IN DB' }
         })
 
         return
@@ -37,11 +37,11 @@ exports.getLoginPage = async (req, res) => {
 
 exports.login = async (req, res) => {
     const { username, password } = req.body;
-    
+
 
     if (!username || !password) {
         res.render('login', {
-            error: {message: 'Fill username and password'}
+            error: { message: 'Fill username and password' }
         })
         return
     }
