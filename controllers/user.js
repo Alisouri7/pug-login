@@ -11,11 +11,12 @@ exports.register = async (req, res) => {
     const { username, password } = req.body;
 
     const isUserExist = await userModel.findOne({username}).lean();
-
-    if (!isUserExist) {
+    
+    if (isUserExist) {
         res.render('register',{
             error: {message: 'THIS USER ALREADY EXIST IN DB'}
         })
+
         return
     }
 
