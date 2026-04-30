@@ -35,6 +35,7 @@ exports.login = async (req, res) => {
         })
         return
     }
+
     const user = await userModel.findOne({ username }).lean();
 
     if (!user) {
@@ -57,6 +58,6 @@ exports.login = async (req, res) => {
     res.render('mainpage', {
         user: { username: `${user.username}` }
     })
-    return
 
+    return
 }
