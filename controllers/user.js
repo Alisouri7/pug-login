@@ -27,7 +27,7 @@ exports.login = async (req, res) => {
     const { username, password } = req.body;
 
 
-    if (username || password) {
+    if (!username || !password) {
         res.render('login', {
             error: {message: 'Fill username and password'}
         })
