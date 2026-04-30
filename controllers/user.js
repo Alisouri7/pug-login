@@ -10,6 +10,15 @@ exports.getRegisterPage = async (req, res) => {
 exports.register = async (req, res) => {
     const { username, password } = req.body;
 
+    if (!username || !password) {
+        res.render('register', {
+            error: { message: 'Fill username and password' }
+        })
+
+        return
+    }
+
+
     const isUserExist = await userModel.findOne({ username }).lean();
 
     if (isUserExist) {
